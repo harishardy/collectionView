@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
@@ -27,6 +27,27 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         }
         
         return cellX
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        
+        if (indexPath.item % 2 == 0)
+        {
+            let alertControllerX = UIAlertController(title: "Selected Color : ", message:
+                "RED", preferredStyle: .alert)
+            alertControllerX.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            self.present(alertControllerX, animated: true, completion: nil)
+
+        }
+        else
+        {
+            let alertControllerX = UIAlertController(title: "elected Color : ", message:
+                "BLUE", preferredStyle: .alert)
+            alertControllerX.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            self.present(alertControllerX, animated: true, completion: nil)
+        }
+        
     }
     
     
