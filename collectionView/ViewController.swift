@@ -15,15 +15,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellX = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cellX = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCellX1
         
         if (indexPath.item % 2 == 0)
         {
             cellX.backgroundColor = UIColor.red
+            cellX.labelX1.text = "RED"
+            
         }
         else
         {
             cellX.backgroundColor = UIColor.blue
+            cellX.labelX1.text = "BLUE"
         }
         
         return cellX
@@ -48,12 +51,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.present(alertControllerX, animated: true, completion: nil)
         }
         
+    
+    
     }
     
     
     
-    
-  
     
     
 
